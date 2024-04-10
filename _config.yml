@@ -29,6 +29,7 @@ sass:
 # Author settings
 author:
   name     : "Stephanie Wang"
+  github: https://github.com/steph-w
 
 plugins:
   - jekyll-sitemap
