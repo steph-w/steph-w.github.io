@@ -23,7 +23,7 @@
   <title>{{ page_title }}</title>
 
   {% assign page_description = '' %}
-  {% capture page_description %}
+  {% capture page_description %}5
       {% if page.description %}
           {{ page.description | strip_html | strip | rstrip | strip_newlines | truncate: 160 }}
       {% else %}
