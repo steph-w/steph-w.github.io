@@ -12,6 +12,16 @@ body {
   height: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.8px;
+  font-weight: 500;
+}
+
 .clearfix {
   &:before {
     content: " ";
@@ -95,9 +105,9 @@ hr {
   margin: 0 0 1em 0;
   cursor: pointer;
   letter-spacing: 0.8px;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 28px;
-  font-weight: 300;
+  font-weight: 600;
 
   span {
     font-weight: 700;
@@ -196,6 +206,28 @@ hr {
   .prev, .next {
     @extend .link;
   }
+}
+
+.publication-item {
+  margin-bottom: 0.2em;
+  display: block;
+  p {
+    margin: 0em;
+    // font-size: rem(14);
+    // color: $medium-gray-color;
+  }
+
+  a {
+    color: $action-color;
+  }
+
+  .publication-title {
+    display: inline-block;
+    font-weight: 600;
+    // width: 85%;
+    // border-bottom: 1px dashed lighten($light-gray-color, 10%);
+  }
+  // border-bottom: 1px dashed lighten($light-gray-color, 10%);
 }
 
 .share {

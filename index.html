@@ -5,6 +5,65 @@ title: Home
 
 {% include intro.html %}
 
+<section class="post-list">
+  <div class="container">
+    <h4>Papers</h4>
+    {% for article in site.data.publications limit:9 %}
+    <!-- {% unless article.next %}
+      <h4 class="category-title">{{ article.date | date: '%Y' }}</h4>
+    {% else %}
+      {% capture year %}{{ article.date | date: '%Y' }}{% endcapture %}
+      {% capture nyear %}{{ article.next.date | date: '%Y' }}{% endcapture %}
+      {% if year != nyear %}
+        <h2 class="category-title">{{ article.date | date: '%Y' }}</h2>
+      {% endif %}
+    {% endunless %} -->
+    <article class="publication-item">
+      <div class="publication-title">{{ article.title | markdownify }}</div>
+      <p><em>{{ article.authors }}.</em></p>
+      <p>{{ article.venue }}, {{ article.date | date: '%Y' }}.<p>
+      <!-- <p><a class="post-link" href="{{ article.link.url }}">{{ article.link.display }}</a></p> -->
+    </article>
+    {% endfor %}
+  </div>
+
+</section>
+
+<!-- <div class="post-list">
+  <div class="container">
+   <div class="article-title">{{ publi.title }}</div>
+   <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" class="img-responsive" width="33%" style="float: left" />
+   <p>{{ publi.description }}</p>
+   <p><em>{{ publi.authors }}</em></p>
+   <p><strong><a href="{{ publi.link.url }}">{{ publi.link.display }}</a></strong></p>
+   <p class="text-danger"><strong> {{ publi.news1 }}</strong></p>
+   <p> {{ publi.news2 }}</p>
+  </div>
+ </div> -->
+
+
+ <!-- <section class="post-list">
+  <div class="container">
+    <h4>News</h4>
+    {% for article in site.data.news limit:9 %}
+    {% unless article.next %}
+      <h4 class="category-title">{{ article.date | date: '%Y' }}</h4>
+    {% else %}
+      {% capture year %}{{ article.date | date: '%Y' }}{% endcapture %}
+      {% capture nyear %}{{ article.next.date | date: '%Y' }}{% endcapture %}
+      {% if year != nyear %}
+        <h2 class="category-title">{{ article.date | date: '%Y' }}</h2>
+      {% endif %}
+    {% endunless %}
+    <article class="post-item">
+      <span class="post-meta date-label">{{ article.date | date: "%b %d"}}</span>
+      <div class="article-title">{{ article.headline | markdownify }}</div>
+    </article>
+    {% endfor %}
+  </div>
+
+</section> -->
+
 <!-- <section class="post-list">
   <div class="container">
     {% for post in site.posts %}

@@ -1,6 +1,9 @@
 // Typography
-@import url('https://fonts.googleapis.com/css?family=Bitter:400,700');
-$base-font-family: 'Bitter', monospace;
+// @import url('https://fonts.googleapis.com/css?family=Bitter:400,700');
+// $base-font-family: 'Bitter', monospace;
+// $heading-font-family: $base-font-family;
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+$base-font-family: 'Lora', serif;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -21,7 +24,7 @@ $primary-color: #000;
 $action-color: $primary-color;
 $white-color: #fff;
 $black-color: #000;
-$blue-color: #0086B3;
+$blue-color: #3c95c5cf;
 $dark-gray-color: #333;
 $medium-gray-color: #999;
 $light-gray-color: #ccc;
