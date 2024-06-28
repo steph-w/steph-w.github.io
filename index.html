@@ -19,7 +19,7 @@ title: Home
       {% endif %}
     {% endunless %} -->
     <article class="publication-item">
-      <div class="publication-title">{{ article.title | markdownify }}</div>
+      <div class="publication-title" ><a href="{{ article.link.url }}">{{ article.title | markdownify }}</a></div>
       <p><em>{{ article.authors }}.</em></p>
       <p>{{ article.venue }}, {{ article.date | date: '%Y' }}.<p>
       <!-- <p><a class="post-link" href="{{ article.link.url }}">{{ article.link.display }}</a></p> -->

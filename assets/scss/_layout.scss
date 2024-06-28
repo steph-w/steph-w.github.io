@@ -80,7 +80,7 @@ hr {
 
 .site-header {
   border-bottom: 1px solid lighten($light-gray-color, 5%);
-  margin-bottom: $small-spacing;
+  // margin-bottom: $small-spacing;
   min-height: 80px;
 }
 
@@ -224,6 +224,11 @@ hr {
   .publication-title {
     display: inline-block;
     font-weight: 600;
+    text-decoration: underline;
+
+    a {
+      color: $action-color;
+    }
     // width: 85%;
     // border-bottom: 1px dashed lighten($light-gray-color, 10%);
   }
