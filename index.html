@@ -4,10 +4,19 @@ title: Home
 ---
 
 {% include intro.html %}
-
 <section class="post-list">
   <div class="container">
-    <h4>Papers</h4>
+    <h4>News</h4>
+    {% for post in site.data.news limit:9 %}
+    <article class="publication-item">
+      <p>&#8226; {{ post.date | date: '%m/%y' }} {{ post.description }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+<section class="post-list">
+  <div class="container">
+    <h4>Research</h4>
     {% for article in site.data.publications limit:9 %}
     <!-- {% unless article.next %}
       <h4 class="category-title">{{ article.date | date: '%Y' }}</h4>
@@ -19,7 +28,9 @@ title: Home
       {% endif %}
     {% endunless %} -->
     <article class="publication-item">
-      <div class="publication-title" ><a href="{{ article.link.url }}">{{ article.title | markdownify }}</a></div>
+      <div class="publication-title" >
+          <a href="{{ article.link.url }}">{{ article.title | markdownify }}</a>
+      </div>
       <p><em>{{ article.authors }}.</em></p>
       <p>{{ article.venue }}, {{ article.date | date: '%Y' }}.<p>
       <!-- <p><a class="post-link" href="{{ article.link.url }}">{{ article.link.display }}</a></p> -->
@@ -27,5 +38,4 @@ title: Home
     </article>
     {% endfor %}
   </div>
-
 </section>

@@ -16,6 +16,10 @@
 </url>
 <url>
 <loc>http://localhost:4000/assets/media/stephanie_wang_24.pdf</loc>
+<lastmod>2024-09-04T14:04:30-04:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/assets/media/stephanie_wang_24_1.pdf</loc>
 <lastmod>2024-05-03T21:59:04-04:00</lastmod>
 </url>
 <url>
@@ -29,5 +33,9 @@
 <url>
 <loc>http://localhost:4000/assets/media/stephanie_wang_24_old3.pdf</loc>
 <lastmod>2024-04-21T15:27:33-04:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/assets/media/stephanie_wang_24_september.pdf</loc>
+<lastmod>2024-07-27T15:27:59-04:00</lastmod>
 </url>
 </urlset>
