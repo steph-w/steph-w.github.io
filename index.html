@@ -34,7 +34,12 @@ title: Home
       <p><em>{{ article.authors }}.</em></p>
       <p>{{ article.venue }}, {{ article.date | date: '%Y' }}.<p>
       <!-- <p><a class="post-link" href="{{ article.link.url }}">{{ article.link.display }}</a></p> -->
-      <p style="padding-top: .25em;"><a href="{{ article.link.url }}"><img src="{{ article.link.display }}"></a></p>
+      <!-- <p style="padding-top: .25em;"><a href="{{ article.link.url }}"><img src="{{ article.link.display }}"></a></p> -->
+      {% if article.link.url %}
+        <p>[<a class="link" href="{{ article.link.url }}">pdf</a>]</p>
+      {% else %}
+      <br>
+      {% endif %}
     </article>
     {% endfor %}
   </div>
