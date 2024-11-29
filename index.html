@@ -6,27 +6,20 @@ title: Home
 {% include intro.html %}
 <section class="post-list">
   <div class="container">
-    <h4>News</h4>
-    {% for post in site.data.news limit:9 %}
+    <h3>News</h3>
+    <div class="scrollable">
+    {% for post in site.data.news %}
     <article class="publication-item">
       <p>&#8226; {{ post.date | date: '%m/%y' }} {{ post.description }}</p>
     </article>
     {% endfor %}
+    </div>
   </div>
 </section>
 <section class="post-list">
   <div class="container">
-    <h4>Research</h4>
+    <h3>Research</h3>
     {% for article in site.data.publications limit:9 %}
-    <!-- {% unless article.next %}
-      <h4 class="category-title">{{ article.date | date: '%Y' }}</h4>
-    {% else %}
-      {% capture year %}{{ article.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ article.next.date | date: '%Y' }}{% endcapture %}
-      {% if year != nyear %}
-        <h2 class="category-title">{{ article.date | date: '%Y' }}</h2>
-      {% endif %}
-    {% endunless %} -->
     <article class="publication-item">
       <div class="publication-title" >
           <a href="{{ article.link.url }}">{{ article.title | markdownify }}</a>
@@ -35,12 +28,26 @@ title: Home
       <p>{{ article.venue }}, {{ article.date | date: '%Y' }}.<p>
       <!-- <p><a class="post-link" href="{{ article.link.url }}">{{ article.link.display }}</a></p> -->
       <!-- <p style="padding-top: .25em;"><a href="{{ article.link.url }}"><img src="{{ article.link.display }}"></a></p> -->
-      {% if article.link.url %}
-        <p>[<a class="link" href="{{ article.link.url }}">pdf</a>]</p>
+      <p>{% if article.link.url %}
+        [<a class="link" href="{{ article.link.url }}">PDF</a>]
       {% else %}
-      <br>
+        </br>
       {% endif %}
+      {% if article.blogpost.url %}
+        [<a class="link" href="{{ article.blogpost.url }}">Blog post</a>]
+      {% endif %}
+      {% if article.blogpost.url %}
+        [<a class="link" href="{{ article.press.url }}">{{ article.press.title }}</a>]
+      {% endif %}
+    </p>
     </article>
     {% endfor %}
   </div>
 </section>
+<section class="post-list">
+  <div class="container">
+    <h3>Resume CV</h3>
+    <p><a class="link" href="{{ '/assets/media/stephanie_wang_24.pdf' | prepend: site.baseurl | prepend: site.url }}">CV</a></p>
+  </div>
+</section>
+{% include contact.html %}

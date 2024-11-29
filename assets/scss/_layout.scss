@@ -49,7 +49,7 @@ hr {
 }
 
 .container {
-  padding: $base-spacing;
+  padding: $small-spacing;
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
@@ -81,7 +81,7 @@ hr {
 .site-header {
   border-bottom: 1px solid lighten($light-gray-color, 5%);
   // margin-bottom: $small-spacing;
-  min-height: 80px;
+  // min-height: 80px;
 }
 
 .intro {
@@ -95,9 +95,9 @@ hr {
     @extend .link;
   }
 
-  .container {
-    padding-bottom: 0;
-  }
+  // .container {
+  //   padding-bottom: 0;
+  // }
 }
 
 .logo {
@@ -105,7 +105,7 @@ hr {
   margin: 0 0 1em 0;
   cursor: pointer;
   letter-spacing: 0.8px;
-  font-size: 22px;
+  font-size: 30px;
   line-height: 28px;
   font-weight: 600;
 
@@ -116,6 +116,7 @@ hr {
 
 .nav {
   min-height: 64px;
+  margin-top: 3em;
 }
 
 .navbar {
@@ -328,4 +329,9 @@ hr {
       color: $blue-color;
     }
   }
+}
+
+.scrollable {
+  height: 100px; /* or any value */
+  overflow-y: auto;
 }
