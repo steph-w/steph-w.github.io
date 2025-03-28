@@ -24,7 +24,7 @@ title: Home
       <div class="publication-title" >
           <a href="{{ article.link.url }}">{{ article.title | markdownify }}</a>
       </div>
-      <p>{{ article.authors | markdownify | remove: '<p>' | remove: '</p>' }}.</p>
+      <p>{{ article.authors | markdownify | remove: '<p>' | remove: '</p>' }}</p>
       <p>{{ article.venue }} {{ article.date | date: '%Y' }}<p>
       <!-- <p><a class="post-link" href="{{ article.link.url }}">{{ article.link.display }}</a></p> -->
       <!-- <p style="padding-top: .25em;"><a href="{{ article.link.url }}"><img src="{{ article.link.display }}"></a></p> -->
