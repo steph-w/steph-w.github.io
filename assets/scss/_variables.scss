@@ -1,10 +1,9 @@
 // Typography
-// @import url('https://fonts.googleapis.com/css?family=Bitter:400,700');
-// $base-font-family: 'Bitter', monospace;
-// $heading-font-family: $base-font-family;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+$base-font-family: 'Lato', sans-serif;
+
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-$base-font-family: 'Lora', serif;
-$heading-font-family: $base-font-family;
+$heading-font-family: 'Lora', serif;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -24,7 +23,7 @@ $primary-color: #333;
 $action-color: $primary-color;
 $white-color: #fff;
 $black-color: #000;
-$blue-color: #3c95c5cf;
+$blue-color: #5A94D0;
 $dark-gray-color: #333;
 $medium-gray-color: #999;
 $light-gray-color: #ccc;

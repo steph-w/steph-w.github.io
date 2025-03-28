@@ -18,7 +18,6 @@ h3,
 h4,
 h5,
 h6 {
-  letter-spacing: 0.8px;
   font-weight: 500;
 }
 
@@ -104,10 +103,10 @@ hr {
   float: left;
   margin: 0 0 1em 0;
   cursor: pointer;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
   font-size: 30px;
   line-height: 28px;
-  font-weight: 600;
+  font-weight: 550;
 
   span {
     font-weight: 700;
@@ -224,12 +223,12 @@ hr {
 
   .publication-title {
     display: inline-block;
-    font-weight: 600;
-    text-decoration: underline;
+    // font-weight: 600;
+    // text-decoration: underline;
 
-    a {
-      color: $action-color;
-    }
+    // a {
+    //   color: $action-color;
+    // }
     // width: 85%;
     // border-bottom: 1px dashed lighten($light-gray-color, 10%);
   }
@@ -332,6 +331,6 @@ hr {
 }
 
 .scrollable {
-  height: 100px; /* or any value */
+  height: 150px; /* or any value */
   overflow-y: auto;
 }
