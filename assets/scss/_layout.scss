@@ -38,6 +38,9 @@ h6 {
 
 body {
   background-color: $base-background-color;
+  a {
+    @extend .link;
+  }
 }
 
 hr {
@@ -73,14 +76,13 @@ hr {
   &:hover,
   &:focus,
   &:active {
+    color: $green-color !important;
     border-bottom: 2px solid $green-color;
   }
 }
 
 .site-header {
   border-bottom: 1px solid lighten($light-gray-color, 5%);
-  // margin-bottom: $small-spacing;
-  // min-height: 80px;
 }
 
 .intro {
@@ -93,23 +95,19 @@ hr {
   a {
     @extend .link;
   }
-
-  // .container {
-  //   padding-bottom: 0;
-  // }
 }
 
 .logo {
   float: left;
   margin: 0 0 1em 0;
   cursor: pointer;
-  letter-spacing: 0.5px;
-  font-size: 30px;
+  letter-spacing: 0.8px;
+  font-size: 38px;
   line-height: 28px;
-  font-weight: 550;
+  font-weight: 200;
 
   span {
-    font-weight: 700;
+    font-weight: 200;
   }
 }
 
@@ -208,7 +206,7 @@ hr {
   }
 }
 
-.publication-item {
+.news-item {
   margin-bottom: 0.2em;
   display: block;
   p {
@@ -221,16 +219,47 @@ hr {
     @extend .link;
   }
 
-  .publication-title {
+  .news-title {
     display: inline-block;
-    // font-weight: 600;
-    // text-decoration: underline;
+    //font-weight: 600;
+    //text-decoration: underline;
 
     // a {
-    //   color: $action-color;
+    //   @extend .link;
     // }
     // width: 85%;
     // border-bottom: 1px dashed lighten($light-gray-color, 10%);
+  }
+  // border-bottom: 1px dashed lighten($light-gray-color, 10%);
+}
+
+.publication-item {
+  margin-bottom: 0.2em;
+  padding-top: 1em;
+  display: block;
+  p {
+    margin: 0em;
+    // font-size: rem(14);
+    // color: $medium-gray-color;
+  }
+
+  a {
+    @extend .link;
+  }
+
+  .publication-title {
+    display: inline-block;       // title container inline-block
+    a {
+      // inherit the above link styling
+      @extend .link;
+      display: inline-block;;
+      // hover underline
+      &:hover,
+      &:focus,
+      &:active {
+        border-bottom-color: $green-color;
+      }
+    }
   }
   // border-bottom: 1px dashed lighten($light-gray-color, 10%);
 }

@@ -9,7 +9,7 @@ title: Home
     <h3>News</h3>
     <div class="scrollable">
     {% for post in site.data.news %}
-    <article class="publication-item">
+    <article class="news-item">
       <p>&#8226; {{ post.date | date: '%B %Y' }}: {{ post.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
     </article>
     {% endfor %}
@@ -19,12 +19,12 @@ title: Home
 <section class="post-list">
   <div class="container">
     <h3>Research</h3>
-    <p style="margin-bottom: 1em;">* indicates equal contribution</p>
+    <p>* indicates equal contribution</p>
     {% for article in site.data.publications limit:9 %}
-      <article class="publication-item" style="padding-bottom: .5em;">
+      <article class="publication-item">
         <div class="publication-title">
           {% if article.link and article.link.url %}
-            <a href="{{ article.link.url }}">{{ article.title | markdownify }}</a>
+            <a class="link" href="{{ article.link.url }}">{{ article.title | markdownify }}</a>
           {% else %}
             {{ article.title | markdownify }}
           {% endif %}
@@ -55,10 +55,10 @@ title: Home
     {% endfor %}
   </div>
 </section>
-<section class="post-list">
+<section class="intro">
   <div class="container">
     <h3>Resume CV</h3>
-    <p><a class="link" href="{{ '/assets/media/stephanie_wang_24.pdf' | prepend: site.baseurl | prepend: site.url }}">CV</a></p>
+    <a href="{{ '/assets/media/stephanie_wang_24.pdf' | prepend: site.baseurl | prepend: site.url }}">CV</a>
   </div>
 </section>
 {% include contact.html %}
