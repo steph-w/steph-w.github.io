@@ -16,12 +16,14 @@ h6 {
   font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: $small-spacing 0 $small-spacing 0;
-  font-weight: 700;
+  font-weight: 200;
   letter-spacing: 0.5px;
 }
 
 h1 {
   font-family: $title-font-family;
+  font-weight: 600;
+  font-style: normal;
   font-size: rem(60);
 }
 

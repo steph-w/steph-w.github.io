@@ -6,7 +6,7 @@ title: Home
 {% include intro.html %}
 <section class="post-list">
   <div class="container">
-    <h3>News</h3>
+    <h4>NEWS</h4>
     <div class="scrollable">
     {% for post in site.data.news %}
     <article class="news-item">
@@ -18,7 +18,7 @@ title: Home
 </section>
 <section class="post-list">
   <div class="container">
-    <h3>Research</h3>
+    <h4>PUBLICATIONS</h4>
     <p>* indicates equal contribution</p>
     {% for article in site.data.publications limit:9 %}
       <article class="publication-item">
@@ -57,7 +57,7 @@ title: Home
 </section>
 <section class="intro">
   <div class="container">
-    <h3>Resume CV</h3>
+    <h4>RESUME CV</h4>
     <a href="{{ '/assets/media/stephanie_wang_24.pdf' | prepend: site.baseurl | prepend: site.url }}">CV</a>
   </div>
 </section>
