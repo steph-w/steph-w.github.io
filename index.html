@@ -24,9 +24,9 @@ title: Home
       <article class="publication-item">
         <div class="publication-title">
           {% if article.link and article.link.url %}
-            <a class="link" href="{{ article.link.url }}">{{ article.title | markdownify }}</a>
+            <strong><a class="link" href="{{ article.link.url }}">{{ article.title | markdownify }}</a></strong>
           {% else %}
-            {{ article.title | markdownify }}
+            <strong>{{ article.title | markdownify }}</strong>
           {% endif %}
         </div>
         <p>{{ article.authors | markdownify | remove: '<p>' | remove: '</p>' }}</p>
