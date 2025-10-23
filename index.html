@@ -10,7 +10,11 @@ title: Home
     <div class="scrollable">
     {% for post in site.data.news %}
     <article class="news-item">
-      <p>&#8226; {{ post.date | date: '%B %Y' }}: {{ post.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 0.5em;">
+        <p style="min-width: 70px;">{{ post.date | date: '%m/%Y' }}</p>
+        <p>{{ post.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+      </div>
+      <!-- <p>{{ post.date | date: '%m/%Y' }}<span style="display: inline-block; width: 2em;"></span>{{ post.description | markdownify | remove: '<p>' | remove: '</p>' }}</p> -->
     </article>
     {% endfor %}
     </div>
