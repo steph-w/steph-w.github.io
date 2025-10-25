@@ -59,6 +59,47 @@ title: Home
     {% endfor %}
   </div>
 </section>
+
+<section class="post-list">
+  <div class="container">
+    <h4>WORKSHOP PAPERS</h4>
+    <p>* indicates equal contribution</p>
+    {% for article in site.data.workshop-papers limit:9 %}
+      <article class="publication-item">
+        <div class="publication-title">
+          {% if article.link and article.link.url %}
+            <strong><a class="link" href="{{ article.link.url }}">{{ article.title | markdownify }}</a></strong>
+          {% else %}
+            <strong>{{ article.title | markdownify }}</strong>
+          {% endif %}
+        </div>
+        <p>{{ article.authors | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        <p>{{ article.venue }} {{ article.date | date: '%Y' }}</p>
+
+        {% assign links = "" %}
+
+        {% if article.link and article.link.url %}
+          {% assign links = links | append: '<a class="link" href="' | append: article.link.url | append: '">PDF</a>' %}
+        {% endif %}
+
+        {% if article.blogpost and article.blogpost.url %}
+          {% if links != "" %}{% assign links = links | append: ' | ' %}{% endif %}
+          {% assign links = links | append: '<a class="link" href="' | append: article.blogpost.url | append: '">Blog post</a>' %}
+        {% endif %}
+
+        {% if article.press and article.press.url %}
+          {% if links != "" %}{% assign links = links | append: ' | ' %}{% endif %}
+          {% assign links = links | append: '<a class="link" href="' | append: article.press.url | append: '">' | append: article.press.title | append: '</a>' %}
+        {% endif %}
+
+        {% if links != "" %}
+          <p>[ {{ links }} ]</p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
 <section class="intro">
   <div class="container">
     <h4>RESUME CV</h4>
