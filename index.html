@@ -100,6 +100,34 @@ title: Home
   </div>
 </section> -->
 
+<section class="post-list">
+  <div class="container">
+    <h4>TEACHING</h4>
+
+    {% assign grouped = site.data.teaching | group_by: "institution" %}
+
+    {% for group in grouped %}
+      <h5>{{ group.name }}</h5>
+
+      {% for course in group.items %}
+        <article class="teaching-item">
+          <p>
+            {{ course.role }},
+            {% if course.link %}
+              <a class="link" href="{{ course.link }}">{{ course.title }}</a>.
+            {% else %}
+              {{ course.title }}.
+            {% endif %}
+            {{ course.term }}.
+          </p>
+        </article>
+      {% endfor %}
+    {% endfor %}
+
+  </div>
+</section>
+
+
 <section class="intro">
   <div class="container">
     <h4>RESUME CV</h4>
