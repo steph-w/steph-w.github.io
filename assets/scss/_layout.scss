@@ -206,7 +206,7 @@ hr {
   display: block;
   p {
     margin: 0em;
-    font-size: rem(14);
+    font-size: 13px;
     //color: $medium-gray-color;
   }
 
@@ -355,6 +355,6 @@ hr {
 }
 
 .scrollable {
-  height: 150px; /* or any value */
+  height: 120px; /* or any value */
   overflow-y: auto;
 }
