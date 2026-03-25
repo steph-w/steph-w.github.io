@@ -54,7 +54,7 @@ hr {
   padding: $small-spacing;
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px;
+  max-width: 700px;
   font-weight: normal;
 }
 
@@ -71,13 +71,8 @@ hr {
   padding-bottom: .05em;
   border-bottom: 2px solid transparent;
 
-  @include transition(border 300ms linear);
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $green-color !important;
-    border-bottom: 2px solid $green-color;
+  &:hover {
+    color: $green-color;  // keep same color, no darkening
   }
 }
 
@@ -141,9 +136,9 @@ hr {
   margin-bottom: 0.2em;
   display: block;
 
-  a {
-    color: $action-color;
-  }
+  // a {
+  //   @extend .link;
+  // }
 
   .article-title {
     display: inline-block;
@@ -176,11 +171,11 @@ hr {
   color: $dark-gray-color;
 }
 
-.post-link,
-.post a,
-.page a {
-  @extend .link;
-}
+// .post-link,
+// .post a,
+// .page a {
+//   @extend .link;
+// }
 
 .post {
   @extend .clearfix;
@@ -206,7 +201,7 @@ hr {
   display: block;
   p {
     margin: 0em;
-    font-size: 13px;
+    // font-size: 13px;
     //color: $medium-gray-color;
   }
 
@@ -244,17 +239,6 @@ hr {
 
   .publication-title {
     display: inline-block;       // title container inline-block
-    a {
-      // inherit the above link styling
-      @extend .link;
-      display: inline-block;;
-      // hover underline
-      &:hover,
-      &:focus,
-      &:active {
-        border-bottom-color: $green-color;
-      }
-    }
   }
   // border-bottom: 1px dashed lighten($light-gray-color, 10%);
 }
@@ -355,6 +339,6 @@ hr {
 }
 
 .scrollable {
-  height: 120px; /* or any value */
+  height: 150px; /* or any value */
   overflow-y: auto;
 }
