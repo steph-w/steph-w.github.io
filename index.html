@@ -6,11 +6,11 @@ title: Home
 {% include intro.html %}
 <section class="post-list">
   <div class="container">
-    <h4>NEWS</h4>
+    <h3>NEWS</h3>
     <div class="scrollable">
     {% for post in site.data.news %}
     <article class="news-item">
-      <div style="display: flex; align-items: flex-start; margin-bottom: 0.5em;">
+      <div style="display: flex; align-items: flex-start; margin-bottom: 0.3em;">
         <p style="min-width: 70px;">{{ post.date | date: '%m/%Y' }}</p>
         <p>{{ post.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
       </div>
@@ -22,7 +22,7 @@ title: Home
 </section>
 <section class="post-list">
   <div class="container">
-    <h4>PUBLICATIONS</h4>
+    <h3>PUBLICATIONS</h3>
     <p>* indicates equal contribution</p>
     {% for article in site.data.publications limit:9 %}
       <article class="publication-item">
@@ -62,12 +62,12 @@ title: Home
 
 <section class="post-list">
   <div class="container">
-    <h4>TEACHING</h4>
+    <h3>TEACHING</h3>
 
     {% assign grouped = site.data.teaching | group_by: "institution" %}
 
     {% for group in grouped %}
-      <h5>{{ group.name }}</h5>
+      <h4>{{ group.name }}</h4>
 
       {% for course in group.items %}
         <article class="teaching-item">
