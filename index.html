@@ -6,7 +6,7 @@ title: Home
 {% include intro.html %}
 <section class="post-list">
   <div class="container">
-    <h3>NEWS</h3>
+    <h4>UPDATES</h4>
     <div class="scrollable">
     {% for post in site.data.news %}
     <article class="news-item">
@@ -22,7 +22,7 @@ title: Home
 </section>
 <section class="post-list">
   <div class="container">
-    <h3>SELECTED PUBLICATIONS</h3>
+    <h4>SELECTED PUBLICATIONS</h4>
     <p>* indicates equal contribution</p>
     {% for article in site.data.publications limit:9 %}
       <article class="publication-item">
@@ -62,12 +62,12 @@ title: Home
 
 <section class="post-list">
   <div class="container">
-    <h3>TEACHING</h3>
+    <h4>TEACHING</h4>
 
     {% assign grouped = site.data.teaching | group_by: "institution" %}
 
     {% for group in grouped %}
-      <h4>{{ group.name }}</h4>
+      <h5>{{ group.name }}</h5>
 
       {% for course in group.items %}
         <article class="teaching-item">
