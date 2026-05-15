@@ -2,11 +2,11 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://localhost:4000/2023/welcome/</loc>
-<lastmod>2023-04-28T00:00:00-04:00</lastmod>
+<lastmod>2023-04-28T00:00:00-07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/2023/another-one/</loc>
-<lastmod>2023-05-01T00:00:00-04:00</lastmod>
+<lastmod>2023-05-01T00:00:00-07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/CV/</loc>
@@ -16,10 +16,10 @@
 </url>
 <url>
 <loc>http://localhost:4000/assets/2025/CHI_25__News_Futures.pdf</loc>
-<lastmod>2025-04-14T18:20:06-04:00</lastmod>
+<lastmod>2025-04-14T15:20:06-07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/assets/media/stephanie_wang_CV.pdf</loc>
-<lastmod>2025-11-25T13:47:37-05:00</lastmod>
+<lastmod>2025-11-25T10:47:37-08:00</lastmod>
 </url>
 </urlset>
