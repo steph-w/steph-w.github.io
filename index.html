@@ -7,23 +7,28 @@ title: Home
 <section class="post-list">
   <div class="container">
     <h4>UPDATES</h4>
-    <div class="scrollable">
+    <div id="news-list">
+    {% assign news_visible_count = 4 %}
     {% for post in site.data.news %}
-    <article class="news-item">
-      <div style="display: flex; align-items: flex-start; margin-bottom: 0.3em;">
-        <p style="min-width: 70px;">{{ post.date | date: '%m/%Y' }}</p>
+    <article class="news-item{% if forloop.index > news_visible_count %} news-item-extra news-item-hidden{% endif %}">
+      <div class="news-row">
+        <p class="news-date">{{ post.date | date: '%m/%Y' }}</p>
         <p>{{ post.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
       </div>
-      <!-- <p>{{ post.date | date: '%m/%Y' }}<span style="display: inline-block; width: 2em;"></span>{{ post.description | markdownify | remove: '<p>' | remove: '</p>' }}</p> -->
     </article>
     {% endfor %}
     </div>
+    {% assign news_count = site.data.news | size %}
+    {% if news_count > news_visible_count %}
+    <button id="news-toggle" class="news-toggle" type="button">Show {{ news_count | minus: news_visible_count }} more</button>
+    {% endif %}
   </div>
 </section>
 <section class="post-list">
   <div class="container">
-    <h4>SELECTED PUBLICATIONS</h4>
-    <p>* indicates equal contribution</p>
+    <h4 class="section-heading--tight">SELECTED PUBLICATIONS</h4>
+    <p class="pub-caption">* indicates equal contribution</p>
+    <div class="pub-list">
     {% for article in site.data.publications limit:9 %}
       <article class="publication-item">
         <div class="publication-title">
@@ -33,8 +38,8 @@ title: Home
             {{ article.title | markdownify }}
           {% endif %}
         </div>
-        <p>{{ article.authors | markdownify | remove: '<p>' | remove: '</p>' }}</p>
-        <p><em>{{ article.venue }},</em> {{ article.date | date: '%Y' }}.</p>
+        <p class="pub-authors">{{ article.authors | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        <p class="pub-venue"><em>{{ article.venue }},</em> {{ article.date | date: '%Y' }}.</p>
 
         {% assign links = "" %}
 
@@ -53,10 +58,11 @@ title: Home
         {% endif %}
 
         {% if links != "" %}
-          <p>[ {{ links }} ]</p>
+          <p class="pub-links">[ {{ links }} ]</p>
         {% endif %}
       </article>
     {% endfor %}
+    </div>
   </div>
 </section>
 
@@ -69,19 +75,21 @@ title: Home
     {% for group in grouped %}
       <h5>{{ group.name }}</h5>
 
+      <div class="teaching-group">
       {% for course in group.items %}
-        <article class="teaching-item">
-          <p>
-            {{ course.role }},
+        <div class="teaching-course">
+          <div>
             {% if course.link %}
-              <a class="link" href="{{ course.link }}">{{ course.title }}</a>.
+              <a class="teaching-course-title" href="{{ course.link }}">{{ course.title }}</a>
             {% else %}
-              {{ course.title }}.
+              <span class="teaching-course-title">{{ course.title }}</span>
             {% endif %}
-            {{ course.term }}.
-          </p>
-        </article>
+            <p class="teaching-course-role">{{ course.role }}</p>
+          </div>
+          <p class="teaching-course-term">{{ course.term }}</p>
+        </div>
       {% endfor %}
+      </div>
     {% endfor %}
 
   </div>
@@ -92,4 +100,20 @@ title: Home
     <a href="{{ '/assets/media/stephanie_wang_CV.pdf' | prepend: site.baseurl | prepend: site.url }}">CV</a>
   </div>
 </section> -->
-<!-- {% include contact.html %} -->
+<script>
+  (function () {
+    var toggle = document.getElementById('news-toggle');
+    if (!toggle) return;
+    var showMoreLabel = toggle.textContent;
+    var showFewerLabel = 'Show fewer';
+    toggle.addEventListener('click', function () {
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      var nextExpanded = !expanded;
+      document.querySelectorAll('#news-list .news-item-extra').forEach(function (item) {
+        item.classList.toggle('news-item-hidden', !nextExpanded);
+      });
+      toggle.setAttribute('aria-expanded', String(nextExpanded));
+      toggle.textContent = nextExpanded ? showFewerLabel : showMoreLabel;
+    });
+  })();
+</script>

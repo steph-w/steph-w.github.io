@@ -1,16 +1,13 @@
 // Typography
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://use.typekit.net/fiw2pkh.css');
-$title-font-family: 'Lora', sans-serif;
-$heading-font-family: "source-sans-pro", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+$title-font-family: 'Lora', serif;
 $base-font-family: 'Lato', sans-serif;
-// $base-font-family: "open-sans", sans-serif;
 
 // Font Sizes
-$base-font-size: 15px;
+$base-font-size: 18px;
 
 // Line height
-$base-line-height: 1.5;
+$base-line-height: 1.7;
 $heading-line-height: 1.2;
 
 // Other Sizes
@@ -38,7 +35,7 @@ $base-border-color: $light-gray-color;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
-$base-background-color: $white-color;
+$base-background-color: #fdfcfa;
 $secondary-background-color: tint($base-border-color, 80%);
 
 // Forms

@@ -12,11 +12,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $heading-font-family;
+  font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: $small-spacing 0 $small-spacing 0;
-  font-weight: 200;
+  font-weight: 700;
   letter-spacing: 0.5px;
 }
 
@@ -24,7 +24,8 @@ h1 {
   font-family: $title-font-family;
   font-weight: 500;
   font-style: normal;
-  font-size: rem(50);
+  font-size: 34px;
+  letter-spacing: -0.2px;
 }
 
 h2 {
@@ -36,16 +37,25 @@ h3 {
 }
 
 h4 {
-  font-size: rem(20);
+  font-size: 14px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #555;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e4e4e4;
+  margin: 0 0 24px;
 }
 
 h5,
 h6 {
+  font-family: $title-font-family;
+  font-weight: 600;
   font-size: rem(16);
+  margin: 0 0 10px;
 }
 
 p {
-  margin: 0;
+  margin: 0 0 22px;
 
   &.lead {
     font-size: rem(22);

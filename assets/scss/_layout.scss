@@ -54,7 +54,7 @@ hr {
   padding: $small-spacing;
   margin-left: auto;
   margin-right: auto;
-  max-width: 700px;
+  max-width: 1000px;
   font-weight: normal;
 }
 
@@ -68,11 +68,13 @@ hr {
 
 .link {
   color: $green-color;
-  padding-bottom: .05em;
-  border-bottom: 2px solid transparent;
+  text-decoration: underline;
+  text-decoration-color: rgba(42, 122, 58, 0.35);
+  text-underline-offset: 2px;
 
   &:hover {
-    color: $green-color;  // keep same color, no darkening
+    color: #1f5c2c;
+    text-decoration-color: currentColor;
   }
 }
 
@@ -81,6 +83,12 @@ hr {
 }
 
 .intro {
+  margin-bottom: 40px;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
   .author-name {
     display: inline-block;
     padding: 0 .2em;
@@ -92,18 +100,46 @@ hr {
   }
 }
 
+.post-list {
+  margin-bottom: 40px;
+}
+
 .logo {
-  float: left;
-  // margin: 0 0 1em 0;
   cursor: pointer;
-  letter-spacing: 0.5px;
-  font-size: 38px;
-  // line-height: 28px;
+  letter-spacing: -0.2px;
+  font-size: 34px;
+  margin: 0;
+}
+
+.site-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 16px;
+
+  a {
+    text-decoration: none;
+    color: #555;
+    font-size: 18px;
+
+    &:hover {
+      color: #555;
+    }
+  }
 }
 
 .nav {
   min-height: 64px;
   margin-top: 3em;
+  margin-bottom: 24px;
 }
 
 .navbar {
@@ -196,6 +232,26 @@ hr {
   }
 }
 
+#news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.news-row {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.news-date {
+  min-width: 76px;
+  flex-shrink: 0;
+  font-size: 15px;
+  color: #777;
+  font-variant-numeric: tabular-nums;
+}
+
 .news-item {
   // margin-bottom: 0.2em;
   display: block;
@@ -223,9 +279,59 @@ hr {
   // border-bottom: 1px dashed lighten($light-gray-color, 10%);
 }
 
+.section-heading--tight {
+  margin-bottom: 8px;
+}
+
+.pub-caption {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+  margin: 0 0 28px;
+}
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+h5 ~ h5 {
+  margin-top: 28px;
+}
+
+.teaching-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.teaching-course {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.teaching-course-title {
+  font-size: 16px;
+}
+
+.teaching-course-role {
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: #777;
+}
+
+.teaching-course-term {
+  margin: 0;
+  font-size: 14px;
+  color: #777;
+  white-space: nowrap;
+}
+
 .publication-item {
   // margin-bottom: 0.2em;
-  padding-top: 1em;
   display: block;
   p {
     margin: 0em;
@@ -239,6 +345,25 @@ hr {
 
   .publication-title {
     display: inline-block;       // title container inline-block
+    font-family: $title-font-family; // Lora — publication titles keep the serif treatment
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .pub-authors {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .pub-venue {
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 6px;
+  }
+
+  .pub-links {
+    font-size: 14px;
   }
   // border-bottom: 1px dashed lighten($light-gray-color, 10%);
 }
@@ -267,7 +392,9 @@ hr {
 .site-footer {
   @extend .clearfix;
 
-  padding: $base-spacing 0;
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid #e4e4e4;
 
   a {
     @extend .link;
@@ -275,8 +402,8 @@ hr {
 
   small {
     display: block;
-    font-size: rem(12);
-    color: darken($medium-gray-color, 10%);
+    font-size: 13px;
+    color: #999;
   }
 
   .block {
@@ -338,7 +465,18 @@ hr {
   }
 }
 
-.scrollable {
-  height: 150px; /* or any value */
-  overflow-y: auto;
+.news-item-hidden {
+  display: none;
+}
+
+.news-toggle {
+  display: inline-block;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: $base-font-family;
+  font-size: 14px;
+  color: $green-color;
+  cursor: pointer;
 }
