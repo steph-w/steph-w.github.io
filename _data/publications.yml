@@ -1,3 +1,12 @@
+- title: "LLM-Assisted Detection and Matching of Authorizations to Appropriations in U.S. Federal Legislation"
+  venue: Work in progress
+  authors: __Stephanie Wang__, Lindsey Gailmard, Casey Chen, Dan E. Ho
+
+- title: "AI in Search Reduces Publisher Referrals Without Improving User Experience: Experimental Evidence"
+  venue: Work in progress
+  authors: __Stephanie Wang__\*, Jeffrey Gleason*, Yakov Bart, Christo Wilson, Danaé Metaxa
+  featured: true
+
 - title: "Admix: A Design Probe Exploring End-User Agency and Collective Interventions in Targeted Advertising"
   venue: Work in progress
   authors: __Stephanie Wang__, Princess Sampson, Mialy Rasetarinera, Danaé Metaxa
@@ -8,6 +17,7 @@
   date: 1. June 2026
   link:
     url: https://dl.acm.org/doi/10.1145/3805689.3812208
+  featured: true
 
 # - title: "Perceptions, Prevalence, and Patterns of Exposure to TikToks Users Perceive as Political"
 #   venue: International AAAI Conference on Web and Social Media (ICWSM)
@@ -27,3 +37,4 @@
   press:
     title: Penn coverage
     url: https://blog.seas.upenn.edu/balancing-quantity-and-quality-how-x-twitters-algorithm-influences-our-consumption-of-news/
+  featured: true

@@ -15,6 +15,9 @@
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/publications/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/assets/2025/CHI_25__News_Futures.pdf</loc>
 <lastmod>2025-04-14T15:20:06-07:00</lastmod>
 </url>

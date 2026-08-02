@@ -1,0 +1,41 @@
+<div class="pub-list">
+{% assign pub_items = site.data.publications %}
+{% if include.featured_only %}
+  {% assign featured_items = pub_items | where: "featured", true %}
+  {% if featured_items.size > 0 %}{% assign pub_items = featured_items %}{% endif %}
+{% endif %}
+{% if include.limit %}{% assign pub_items = pub_items | slice: 0, include.limit %}{% endif %}
+{% for article in pub_items %}
+  <article class="publication-item">
+    <div class="publication-title">
+      {% if article.link and article.link.url %}
+        <a class="link" href="{{ article.link.url }}">{{ article.title | markdownify }}</a>
+      {% else %}
+        {{ article.title | markdownify }}
+      {% endif %}
+    </div>
+    <p class="pub-authors">{{ article.authors | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+    <p class="pub-venue"><em>{{ article.venue }},</em> {{ article.date | date: '%Y' }}.</p>
+
+    {% assign links = "" %}
+
+    {% if article.link and article.link.url %}
+      {% assign links = links | append: '<a class="link" href="' | append: article.link.url | append: '">PDF</a>' %}
+    {% endif %}
+
+    {% if article.blogpost and article.blogpost.url %}
+      {% if links != "" %}{% assign links = links | append: ' | ' %}{% endif %}
+      {% assign links = links | append: '<a class="link" href="' | append: article.blogpost.url | append: '">Blog post</a>' %}
+    {% endif %}
+
+    {% if article.press and article.press.url %}
+      {% if links != "" %}{% assign links = links | append: ' | ' %}{% endif %}
+      {% assign links = links | append: '<a class="link" href="' | append: article.press.url | append: '">' | append: article.press.title | append: '</a>' %}
+    {% endif %}
+
+    {% if links != "" %}
+      <p class="pub-links">[ {{ links }} ]</p>
+    {% endif %}
+  </article>
+{% endfor %}
+</div>
