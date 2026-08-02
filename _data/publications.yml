@@ -19,12 +19,12 @@
     url: https://dl.acm.org/doi/10.1145/3805689.3812208
   featured: true
 
-# - title: "Perceptions, Prevalence, and Patterns of Exposure to TikToks Users Perceive as Political"
-#   venue: International AAAI Conference on Web and Social Media (ICWSM)
-#   authors: Jason Greenfield, __Stephanie Wang__, Samuel Jung, Sanjana Gautam, Kevin Yang, Danaé Metaxa
-#   date: 1. May 2026
-#   link:
-#     url: ""
+- title: "What's Political on TikTok? Perceptions, Prevalence, and Patterns of Exposure to TikToks Users Perceive as Political"
+  venue: International AAAI Conference on Web and Social Media (ICWSM)
+  authors: Jason Greenfield, __Stephanie Wang__, Samuel Jung, Sanjana Gautam, Kevin Yang, Danaé Metaxa
+  date: 1. May 2026
+  link:
+    url: https://doi.org/10.1609/icwsm.v20i1.42675
 
 - title: "Lower Quantity, Higher Quality: Auditing News Content and User Perceptions on Twitter/X Algorithmic versus Chronological Timelines"
   venue: ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW)

@@ -1,11 +1,11 @@
 // Design tokens (Classical system) — colors/spacing referenced directly via var()
 :root {
-  --color-bg: #f3f2f2;
+  --color-bg: #fff;
   --color-surface: #eae9e9;
   --color-text: #201f1d;
-  --color-accent: #b68235;
-  --color-accent-700: #7d5411;
-  --color-accent-800: #5a3b0a;
+  --color-accent: #0086b3;
+  --color-accent-700: #0086b3;
+  --color-accent-800: #005e7d;
   --color-divider: color-mix(in srgb, #201f1d 16%, transparent);
   --color-neutral-600: #7d7979;
   --color-neutral-700: #605d5d;
@@ -38,11 +38,10 @@ $base-z-index: 0;
 
 // Colors
 $primary-color: #333;
-$action-color: #b68235;
+$action-color: #0086b3;
 $white-color: #fff;
 $black-color: #000;
 $blue-color: #5A94D0;
-$green-color: #7d5411; // Classical accent-700 — used as the site's link/accent color
 $dark-gray-color: #333;
 $medium-gray-color: #999;
 $light-gray-color: #ccc;
@@ -55,7 +54,7 @@ $base-border-color: $light-gray-color;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
-$base-background-color: #f3f2f2;
+$base-background-color: #fff;
 $secondary-background-color: tint($base-border-color, 80%);
 
 // Forms

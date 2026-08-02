@@ -20,7 +20,7 @@
     {% assign links = "" %}
 
     {% if article.link and article.link.url %}
-      {% assign links = links | append: '<a class="link" href="' | append: article.link.url | append: '">PDF</a>' %}
+      {% assign links = links | append: '<a class="link" href="' | append: article.link.url | append: '">Paper</a>' %}
     {% endif %}
 
     {% if article.blogpost and article.blogpost.url %}
