@@ -73,22 +73,24 @@ title: Home
     {% assign grouped = site.data.teaching | group_by: "institution" %}
 
     {% for group in grouped %}
-      <h5>{{ group.name }}</h5>
+      <div class="teaching-institution">
+        <h5>{{ group.name }}</h5>
 
-      <div class="teaching-group">
-      {% for course in group.items %}
-        <div class="teaching-course">
-          <div>
-            {% if course.link %}
-              <a class="teaching-course-title" href="{{ course.link }}">{{ course.title }}</a>
-            {% else %}
-              <span class="teaching-course-title">{{ course.title }}</span>
-            {% endif %}
-            <p class="teaching-course-role">{{ course.role }}</p>
+        <div class="teaching-group">
+        {% for course in group.items %}
+          <div class="teaching-course">
+            <div>
+              {% if course.link %}
+                <a class="teaching-course-title" href="{{ course.link }}">{{ course.title }}</a>
+              {% else %}
+                <span class="teaching-course-title">{{ course.title }}</span>
+              {% endif %}
+              <p class="teaching-course-role">{{ course.role }}</p>
+            </div>
+            <p class="teaching-course-term">{{ course.term }}</p>
           </div>
-          <p class="teaching-course-term">{{ course.term }}</p>
+        {% endfor %}
         </div>
-      {% endfor %}
       </div>
     {% endfor %}
 

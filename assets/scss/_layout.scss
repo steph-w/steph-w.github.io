@@ -54,7 +54,7 @@ hr {
   padding: $small-spacing;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1000px;
+  max-width: 720px;
   font-weight: normal;
 }
 
@@ -67,13 +67,13 @@ hr {
 }
 
 .link {
-  color: $green-color;
+  color: var(--color-accent-700);
   text-decoration: underline;
-  text-decoration-color: rgba(42, 122, 58, 0.35);
-  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--color-accent-700) 40%, transparent);
+  text-underline-offset: 3px;
 
   &:hover {
-    color: #1f5c2c;
+    color: var(--color-accent-800);
     text-decoration-color: currentColor;
   }
 }
@@ -83,7 +83,12 @@ hr {
 }
 
 .intro {
-  margin-bottom: 40px;
+  margin-bottom: var(--space-8);
+
+  p {
+    margin: 0 0 var(--space-4);
+    line-height: 1.7;
+  }
 
   p:last-child {
     margin-bottom: 0;
@@ -101,13 +106,14 @@ hr {
 }
 
 .post-list {
-  margin-bottom: 40px;
+  margin-bottom: var(--space-8);
 }
 
 .logo {
   cursor: pointer;
-  letter-spacing: -0.2px;
-  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-size: 36px;
   margin: 0;
 }
 
@@ -117,21 +123,23 @@ hr {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-divider);
+  margin-bottom: var(--space-8);
 }
 
 .contact-icons {
   display: flex;
-  gap: 16px;
+  align-items: center;
+  gap: 18px;
 
   a {
     text-decoration: none;
-    color: #555;
-    font-size: 18px;
+    color: var(--color-text);
+    display: inline-flex;
 
     &:hover {
-      color: #555;
+      color: var(--color-accent-700);
     }
   }
 }
@@ -139,7 +147,6 @@ hr {
 .nav {
   min-height: 64px;
   margin-top: 3em;
-  margin-bottom: 24px;
 }
 
 .navbar {
@@ -235,20 +242,24 @@ hr {
 #news-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .news-row {
   display: flex;
-  gap: 20px;
+  gap: 22px;
   align-items: baseline;
+
+  p {
+    line-height: 1.65;
+  }
 }
 
 .news-date {
-  min-width: 76px;
+  min-width: 84px;
   flex-shrink: 0;
-  font-size: 15px;
-  color: #777;
+  font-size: 14px;
+  color: var(--color-neutral-700);
   font-variant-numeric: tabular-nums;
 }
 
@@ -280,24 +291,28 @@ hr {
 }
 
 .section-heading--tight {
-  margin-bottom: 8px;
+  margin-bottom: var(--space-1);
 }
 
 .pub-caption {
-  font-size: 14px;
-  color: #888;
+  font-size: 13px;
+  color: var(--color-neutral-600);
   font-style: italic;
-  margin: 0 0 28px;
+  margin: 0 0 var(--space-6);
 }
 
 .pub-list {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 30px;
 }
 
-h5 ~ h5 {
-  margin-top: 28px;
+.teaching-institution {
+  margin-bottom: var(--space-6);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .teaching-group {
@@ -315,19 +330,21 @@ h5 ~ h5 {
 
 .teaching-course-title {
   font-size: 16px;
+  font-weight: 600;
 }
 
 .teaching-course-role {
   margin: 2px 0 0;
   font-size: 14px;
-  color: #777;
+  color: var(--color-neutral-600);
 }
 
 .teaching-course-term {
   margin: 0;
   font-size: 14px;
-  color: #777;
+  color: var(--color-neutral-600);
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .publication-item {
@@ -345,25 +362,28 @@ h5 ~ h5 {
 
   .publication-title {
     display: inline-block;       // title container inline-block
-    font-family: $title-font-family; // Lora — publication titles keep the serif treatment
+    font-family: $title-font-family; // Cormorant Garamond — publication titles keep the serif treatment
     font-weight: 600;
-    margin-bottom: 8px;
+    font-size: 19px;
+    margin-bottom: var(--space-1);
     line-height: 1.4;
   }
 
   .pub-authors {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 4px;
+    line-height: 1.55;
   }
 
   .pub-venue {
-    font-size: 15px;
-    color: #777;
+    font-size: 14px;
+    color: var(--color-neutral-600);
+    font-style: italic;
     margin-bottom: 6px;
   }
 
   .pub-links {
-    font-size: 14px;
+    font-size: 13px;
   }
   // border-bottom: 1px dashed lighten($light-gray-color, 10%);
 }
@@ -392,9 +412,9 @@ h5 ~ h5 {
 .site-footer {
   @extend .clearfix;
 
-  margin-top: 80px;
-  padding-top: 24px;
-  border-top: 1px solid #e4e4e4;
+  margin-top: var(--space-8);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-divider);
 
   a {
     @extend .link;
@@ -402,8 +422,8 @@ h5 ~ h5 {
 
   small {
     display: block;
-    font-size: 13px;
-    color: #999;
+    font-size: 12px;
+    color: var(--color-neutral-600);
   }
 
   .block {
@@ -471,12 +491,20 @@ h5 ~ h5 {
 
 .news-toggle {
   display: inline-block;
-  margin-top: 14px;
+  margin-top: var(--space-3);
   background: none;
   border: none;
   padding: 0;
   font-family: $base-font-family;
   font-size: 14px;
-  color: $green-color;
+  color: var(--color-accent-700);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-accent-700) 40%, transparent);
+  text-underline-offset: 3px;
   cursor: pointer;
+
+  &:hover {
+    color: var(--color-accent-800);
+    text-decoration-color: currentColor;
+  }
 }
