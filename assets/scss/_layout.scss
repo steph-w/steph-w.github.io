@@ -12,15 +12,6 @@ body {
   height: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-
-}
-
 .clearfix {
   &:before {
     content: " ";
@@ -54,7 +45,7 @@ hr {
   padding: $small-spacing;
   margin-left: auto;
   margin-right: auto;
-  max-width: 720px;
+  max-width: 800px;
   font-weight: normal;
 }
 
@@ -78,8 +69,31 @@ hr {
   }
 }
 
-.site-header {
-  // border-bottom: 1px solid lighten($light-gray-color, 5%);
+.profile-block {
+  float: right;
+  width: 184px;
+  margin: 0 0 var(--space-4) var(--space-6);
+}
+
+.profile-photo {
+  display: block;
+  width: 184px;
+  height: 184px;
+  margin-bottom: var(--space-4);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--color-divider);
+}
+
+.profile-contact {
+  text-align: center;
+}
+
+.profile-email {
+  display: block;
+  font-size: 12px;
+  margin-bottom: var(--space-2);
+  word-break: break-all;
 }
 
 .intro {
@@ -132,7 +146,7 @@ hr {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  padding-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
   border-bottom: 1px solid var(--color-divider);
   margin-bottom: var(--space-8);
 }
@@ -140,6 +154,7 @@ hr {
 .contact-icons {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 18px;
 
   a {
