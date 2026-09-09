@@ -6,10 +6,15 @@
 {% endif %}
 {% if include.limit %}{% assign pub_items = pub_items | slice: 0, include.limit %}{% endif %}
 {% for article in pub_items %}
+  {% assign link_url = article.link.url | default: article.link.preprint %}
+  {% assign link_label = "Paper" %}
+  {% if article.link.url == nil and article.link.preprint %}
+    {% assign link_label = "Preprint" %}
+  {% endif %}
   <article class="publication-item">
     <div class="publication-title">
-      {% if article.link and article.link.url %}
-        <a class="link" href="{{ article.link.url }}">{{ article.title | markdownify }}</a>
+      {% if article.link and link_url %}
+        <a class="link" href="{{ link_url }}">{{ article.title | markdownify }}</a>
       {% else %}
         {{ article.title | markdownify }}
       {% endif %}
@@ -19,8 +24,8 @@
 
     {% assign links = "" %}
 
-    {% if article.link and article.link.url %}
-      {% assign links = links | append: '<a class="link" href="' | append: article.link.url | append: '">Paper</a>' %}
+    {% if article.link and link_url %}
+      {% assign links = links | append: '<a class="link" href="' | append: link_url | append: '">' | append: link_label | append: '</a>' %}
     {% endif %}
 
     {% if article.blogpost and article.blogpost.url %}
