@@ -342,7 +342,30 @@ hr {
 .pub-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: var(--space-6);
+}
+
+.pub-category {
+  margin-bottom: var(--space-6);
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--color-accent-700);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h5 {
+    color: #3a3a3a;
+    font-family: $base-font-family;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+}
+
+.pub-category-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
 }
 
 .teaching-institution {

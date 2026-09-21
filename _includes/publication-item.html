@@ -1,0 +1,37 @@
+{% assign article = include.article %}
+{% assign link_url = article.link.url | default: article.link.preprint %}
+{% assign link_label = "Paper" %}
+{% if article.link.url == nil and article.link.preprint %}
+  {% assign link_label = "Preprint" %}
+{% endif %}
+<article class="publication-item">
+  <div class="publication-title">
+    {% if article.link and link_url %}
+      <a class="link" href="{{ link_url }}">{{ article.title | markdownify }}</a>
+    {% else %}
+      {{ article.title | markdownify }}
+    {% endif %}
+  </div>
+  <p class="pub-authors">{{ article.authors | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  <p class="pub-venue"><em>{{ article.venue }},</em> {{ article.date | date: '%Y' }}.</p>
+
+  {% assign links = "" %}
+
+  {% if article.link and link_url %}
+    {% assign links = links | append: '<a class="link" href="' | append: link_url | append: '">' | append: link_label | append: '</a>' %}
+  {% endif %}
+
+  {% if article.blogpost and article.blogpost.url %}
+    {% if links != "" %}{% assign links = links | append: ' | ' %}{% endif %}
+    {% assign links = links | append: '<a class="link" href="' | append: article.blogpost.url | append: '">Blog post</a>' %}
+  {% endif %}
+
+  {% if article.press and article.press.url %}
+    {% if links != "" %}{% assign links = links | append: ' | ' %}{% endif %}
+    {% assign links = links | append: '<a class="link" href="' | append: article.press.url | append: '">' | append: article.press.title | append: '</a>' %}
+  {% endif %}
+
+  {% if links != "" %}
+    <p class="pub-links">[ {{ links }} ]</p>
+  {% endif %}
+</article>
